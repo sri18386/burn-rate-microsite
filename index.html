@@ -188,6 +188,26 @@ b, strong{color:var(--ink); font-weight:600;}
 .tbar-price{font-family:var(--mono); font-size:20px; color:var(--ink); font-weight:600;}
 .plane-arrow{position:absolute; top:20%; left:30%; right:30%; text-align:center; font-size:22px; color:var(--amber);}
 
+/* ---------- revenue breakdown bar ---------- */
+.revbar-block{margin-top:44px;}
+.revbar-label{font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:16px;}
+.revbar{display:flex; width:100%; height:88px; border-radius:10px; overflow:hidden; border:1px solid var(--line);}
+.rseg{display:flex; align-items:center; justify-content:center; text-align:center; border-right:1px solid rgba(10,14,26,0.55); transition:opacity .2s ease;}
+.rseg:last-child{border-right:none;}
+.rseg:hover{opacity:.85;}
+.rseg .rl{font-family:var(--mono); line-height:1.35; padding:0 4px;}
+.rseg .rl b{display:block; font-size:15px;}
+.rseg .rl span{font-size:10.5px; opacity:.85;}
+.rseg.dim .rl{display:none;}
+.rseg.on-dark .rl{color:var(--ink);}
+.rseg.on-light .rl{color:#0a0e1a;}
+.revbar-legend{display:flex; flex-wrap:wrap; gap:9px 24px; margin-top:20px;}
+.rleg-item{display:flex; align-items:center; gap:9px; font-family:var(--mono); font-size:12.5px; color:var(--ink-dim);}
+.rleg-swatch{width:11px; height:11px; border-radius:3px; flex-shrink:0;}
+.rleg-item b{color:var(--ink); font-weight:600;}
+.rleg-item.margin-item b{color:var(--green);}
+@media (max-width:700px){ .rseg .rl{display:none;} .revbar{height:56px;} }
+
 /* ---------- silo diagram ---------- */
 .silo-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:40px;}
 .silo-node{
@@ -362,6 +382,43 @@ footer li{margin-bottom:9px;}
     </g>
   </svg>
   <div class="scroll-cue"><div class="ln"></div>SCROLL</div>
+</section>
+
+<!-- ============ WHERE $100 OF REVENUE GOES ============ -->
+<section id="s-revenue">
+  <div class="wrap-narrow reveal">
+    <div class="kicker">The stakes — illustrative airline P&amp;L</div>
+    <h2>Where $100 of airline revenue actually goes.</h2>
+    <p class="lede">This is a typical cost structure, not one airline's real books — but the shape of it holds across the industry. Fuel isn't just the biggest line item. It's larger than what's left over at the bottom.</p>
+  </div>
+  <div class="wrap reveal">
+    <div class="revbar-block">
+      <div class="revbar-label">$100 in revenue, split across cost &amp; margin</div>
+      <div class="revbar">
+        <div class="rseg on-light" style="flex:25 1 0; background:var(--amber);"><div class="rl"><b>$25</b><span>Fuel</span></div></div>
+        <div class="rseg on-light" style="flex:20 1 0; background:var(--ice);"><div class="rl"><b>$20</b><span>Airport &amp; ground</span></div></div>
+        <div class="rseg on-dark" style="flex:10 1 0; background:#3f6a92;"><div class="rl"><b>$10</b><span>Crew</span></div></div>
+        <div class="rseg on-dark" style="flex:10 1 0; background:#2f4d68;"><div class="rl"><b>$10</b><span>Maintenance</span></div></div>
+        <div class="rseg dim on-dark" style="flex:5 1 0; background:#26374d;"><div class="rl"><b>$5</b><span>Distribution</span></div></div>
+        <div class="rseg dim on-dark" style="flex:5 1 0; background:#203047;"><div class="rl"><b>$5</b><span>Station &amp; lounge</span></div></div>
+        <div class="rseg dim on-dark" style="flex:5 1 0; background:#1a2740;"><div class="rl"><b>$5</b><span>Inflight product</span></div></div>
+        <div class="rseg dim on-dark" style="flex:5 1 0; background:#172236;"><div class="rl"><b>$5</b><span>Tax, fees &amp; charges</span></div></div>
+        <div class="rseg on-light" style="flex:15 1 0; background:repeating-linear-gradient(135deg, var(--green), var(--green) 7px, rgba(126,232,184,0.72) 7px, rgba(126,232,184,0.72) 14px); border-left:2px dashed var(--bg);"><div class="rl"><b>$15</b><span>Margin</span></div></div>
+      </div>
+      <div class="revbar-legend">
+        <div class="rleg-item"><span class="rleg-swatch" style="background:var(--amber);"></span>Fuel — <b>$25</b></div>
+        <div class="rleg-item"><span class="rleg-swatch" style="background:var(--ice);"></span>Airport &amp; ground handling — <b>$20</b></div>
+        <div class="rleg-item"><span class="rleg-swatch" style="background:#3f6a92;"></span>Crew — <b>$10</b></div>
+        <div class="rleg-item"><span class="rleg-swatch" style="background:#2f4d68;"></span>Maintenance — <b>$10</b></div>
+        <div class="rleg-item"><span class="rleg-swatch" style="background:#26374d;"></span>Distribution — <b>$5</b></div>
+        <div class="rleg-item"><span class="rleg-swatch" style="background:#203047;"></span>Station &amp; lounge — <b>$5</b></div>
+        <div class="rleg-item"><span class="rleg-swatch" style="background:#1a2740;"></span>Inflight product — <b>$5</b></div>
+        <div class="rleg-item"><span class="rleg-swatch" style="background:#172236;"></span>Tax, fees &amp; charges — <b>$5</b></div>
+        <div class="rleg-item margin-item"><span class="rleg-swatch" style="background:var(--green);"></span>Operating margin — <b>$15</b></div>
+      </div>
+      <p style="margin-top:26px; font-size:13.5px;">Fuel ($25) alone outweighs the entire operating margin ($15). A cost swing that would be a rounding error in most industries can wipe out — or double — what's left at the bottom of this bar.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ============ 1. THE MYTH ============ -->
@@ -766,6 +823,7 @@ footer li{margin-bottom:9px;}
 // ---- section registry for rail nav ----
 const sections = [
   {id:'s-hero', label:'Start'},
+  {id:'s-revenue', label:'Where $100 goes'},
   {id:'s-myth', label:'01 Decision horizons'},
   {id:'s-tanker', label:'02 Tankering'},
   {id:'s-global', label:'03 Global vs local'},

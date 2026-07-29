@@ -181,8 +181,10 @@ b, strong{color:var(--ink); font-weight:600;}
 @media (max-width:700px){ .hband{grid-template-columns:1fr; text-align:left;} .hband .freq{text-align:left;} }
 
 /* ---------- tankering viz ---------- */
-.tanker-wrap{margin-top:36px; display:flex; align-items:flex-end; gap:60px; padding:30px 20px 10px; position:relative;}
-.tbar-col{display:flex; flex-direction:column; align-items:center; gap:10px; flex:1;}
+.tanker-wrap{margin-top:36px; display:flex; align-items:flex-end; justify-content:center; gap:56px; padding:30px 20px 10px; position:relative; flex-wrap:wrap;}
+.tbar-col{display:flex; flex-direction:column; align-items:center; gap:10px;}
+.tbar-arrow{align-self:center;}
+.tbar-arrow-label{font-family:var(--mono); font-size:12.5px; color:var(--amber); text-align:center; white-space:nowrap;}
 .tbar{width:70px; border-radius:6px 6px 0 0; position:relative; transition:height 1s ease;}
 .tbar-label{font-family:var(--mono); font-size:12px; color:var(--ink-dim); text-align:center;}
 .tbar-price{font-family:var(--mono); font-size:20px; color:var(--ink); font-weight:600;}
@@ -474,8 +476,8 @@ footer li{margin-bottom:9px;}
           <div class="tbar" style="height:120px; background:linear-gradient(180deg, rgba(126,232,184,0.5), rgba(126,232,184,0.15)); border:1px solid rgba(126,232,184,0.5);"></div>
           <div class="tbar-label">Singapore<br>/ ton</div>
         </div>
-        <div class="tbar-col" style="position:relative;">
-          <div style="position:absolute; top:-30px; left:0; right:0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--amber);">✈ tanker +9t here →</div>
+        <div class="tbar-col tbar-arrow">
+          <div class="tbar-arrow-label">✈ tanker +9t here →</div>
         </div>
         <div class="tbar-col">
           <div class="tbar-price">$850</div>

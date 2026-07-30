@@ -359,6 +359,15 @@ footer li{margin-bottom:9px;}
 
 /* ---------- table appendix ---------- */
 .spec-table{width:100%; border-collapse:collapse; margin-top:30px; font-size:13.5px;}
+.bench-table td:nth-child(4), .bench-table td:nth-child(5), .bench-table td:nth-child(6), .bench-table td:nth-child(7){font-family:var(--mono);}
+.bench-table td:last-child{color:var(--amber); font-weight:600;}
+.bench-total{
+  margin-top:22px; padding:18px 22px; border-radius:10px; border:1px solid rgba(255,176,32,0.3);
+  background:rgba(255,176,32,0.06); font-size:14.5px;
+}
+.bench-total b{color:var(--amber); font-family:var(--mono);}
+.bench-sources{margin-top:24px; font-size:11.5px; color:var(--ink-faint); line-height:1.9;}
+.bench-sources a{color:var(--ink-faint); text-decoration:underline;}
 .spec-table th{
   text-align:left; font-family:var(--mono); font-size:11px; letter-spacing:.05em; text-transform:uppercase;
   color:var(--ink-faint); padding:10px 14px; border-bottom:1px solid var(--line);
@@ -825,6 +834,35 @@ footer li{margin-bottom:9px;}
   </div>
 </section>
 
+<!-- ============ REAL BENCHMARKS ============ -->
+<section id="s-bench">
+  <div class="wrap-narrow reveal">
+    <div class="kicker">A reality check with real, public numbers</div>
+    <h2>What one percent is actually worth, at ten real carriers.</h2>
+    <p class="lede">Every other figure in this paper is illustrative, but these ten rows use real, publicly disclosed revenue and fuel-cost figures from each carrier's own published annual results, converted to US dollars at approximate exchange rates where the underlying report uses another currency.</p>
+  </div>
+  <div class="wrap reveal">
+    <div style="overflow-x:auto;">
+    <table class="spec-table bench-table">
+      <tr><th>Carrier</th><th>Region / type</th><th>Fiscal period</th><th>Revenue</th><th>Fuel cost</th><th>Fuel % of revenue</th><th>1% fuel reduction</th></tr>
+      <tr><td>Emirates</td><td>Middle East, full-service</td><td>FY ended Mar 2025</td><td>$34.9B</td><td>$8.9B</td><td>25.5%</td><td>$89.0M</td></tr>
+      <tr><td>Lufthansa Group</td><td>Europe, full-service</td><td>CY2025</td><td>€39.6B (~$42.8B)</td><td>€7.27B (~$7.85B)</td><td>18.3%</td><td>$78.5M</td></tr>
+      <tr><td>IAG</td><td>Europe, full-service</td><td>CY2025</td><td>€33.2B (~$35.9B)</td><td>€7.08B (~$7.65B)</td><td>21.3%</td><td>$76.5M</td></tr>
+      <tr><td>Qatar Airways Group</td><td>Middle East, full-service</td><td>FY ended Mar 2025</td><td>$23.6B</td><td>$5.7B</td><td>24.2%</td><td>$57.0M</td></tr>
+      <tr><td>Turkish Airlines</td><td>Europe / Asia, full-service</td><td>CY2025</td><td>$24.1B</td><td>$6.07B</td><td>25.2%</td><td>$60.7M</td></tr>
+      <tr><td>Ryanair</td><td>Europe, LCC</td><td>FY ended Mar 2025</td><td>€13.95B (~$15.1B)</td><td>€5.22B (~$5.64B)</td><td>37.4%</td><td>$56.4M</td></tr>
+      <tr><td>Air France-KLM</td><td>Europe, full-service</td><td>CY2025</td><td>€31.91B (~$34.5B)</td><td>€3.8B (~$4.1B)</td><td>11.9%</td><td>$41.1M</td></tr>
+      <tr><td>easyJet</td><td>Europe, LCC</td><td>FY ended Sep 2025</td><td>£10.1B (~$12.8B)</td><td>£2.25B (~$2.86B)</td><td>22.3%</td><td>$28.6M</td></tr>
+      <tr><td>Wizz Air</td><td>Europe, LCC</td><td>FY ended Mar 2025</td><td>€5.27B (~$5.69B)</td><td>€1.80B (~$1.94B)</td><td>34.1%</td><td>$19.4M</td></tr>
+      <tr><td>Norwegian Air Shuttle</td><td>Europe, LCC</td><td>CY2025</td><td>NOK 37.65B (~$3.58B)</td><td>NOK 8.57B (~$816M)</td><td>22.8%</td><td>$8.2M</td></tr>
+    </table>
+    </div>
+    <div class="bench-total">Combined across just these ten carriers, a 1% fuel-cost reduction comes to roughly <b>$515M a year</b>. Low-cost carriers carry fuel at a much higher share of revenue than full-service carriers, with Ryanair and Wizz Air near 34 to 37%, against 18 to 25% for the legacy carriers in this table, which means a percentage-point efficiency gain matters proportionally more to an LCC even where the absolute dollar figure looks smaller.</div>
+    <p class="src-note">Fiscal periods are not all aligned across this table. Ryanair, Wizz Air, Emirates, and Qatar Airways report on an April to March year, easyJet on an October to September year, and the rest on calendar year, which is fine for a directional, industry-wide view but worth a footnote if this table goes into a deck built around one specific carrier. Emirates and Qatar Airways are the only Middle East carriers in the broader set originally considered here with a clean, disclosed fuel-cost line in public results, since Etihad, Air Arabia, flynas, and Jazeera Airways publish revenue and profit without breaking out fuel separately, and several Gulf carriers are state-owned or private and do not publish detailed financials at all.</p>
+    <div class="bench-sources">Sources: <a href="https://newsroom.lufthansagroup.com/en/lufthansa-group-increases-operating-profit-by-20-percent-and-achieves-highest-revenue-in-company-history/" target="_blank" rel="noopener">Lufthansa Group</a>, <a href="https://www.iairgroup.com/media/wd4dsjef/full-year-results-release-for-the-year-to-31-december-2025.pdf" target="_blank" rel="noopener">IAG</a>, <a href="https://www.airfranceklm.com/sites/default/files/2026-02/afklm_full_year_2025_press_release_english.pdf" target="_blank" rel="noopener">Air France-KLM</a>, <a href="https://investor.ryanair.com/wp-content/uploads/2025/05/FY25-Ryanair-Results.pdf" target="_blank" rel="noopener">Ryanair</a>, <a href="https://s203.q4cdn.com/522538739/files/doc_financials/2025/q4/FY25-RNS.pdf" target="_blank" rel="noopener">easyJet</a>, <a href="https://s204.q4cdn.com/169340705/files/doc_news/Final-Results-2025.pdf" target="_blank" rel="noopener">Wizz Air</a>, <a href="https://www.norwegian.com/globalassets/ip/documents/about-us/company/investor-relations/reports-and-presentations/quarterly-results/2025/norwegian-q2-2025-report_1.pdf" target="_blank" rel="noopener">Norwegian Air Shuttle</a>, <a href="https://www.aerotime.aero/articles/turkish-airlines-posts-2025-results-showing-record-revenue-small-profit-drop" target="_blank" rel="noopener">Turkish Airlines</a>, <a href="https://www.emirates.com/media-centre/emirates-group-achieves-record-profit-of-aed-227-bn-us-62-bn-in-2024-25/" target="_blank" rel="noopener">Emirates</a>, <a href="https://www.aviation24.be/airlines/qatar-airways/group-posts-record-financial-results-for-fy-2024-25/" target="_blank" rel="noopener">Qatar Airways</a>.</div>
+  </div>
+</section>
+
 <!-- ============ 9. MVP ROADMAP ============ -->
 <section id="s-mvp">
   <div class="wrap-narrow reveal">
@@ -907,7 +945,7 @@ footer li{margin-bottom:9px;}
     <div class="cols">
       <div>
         <h4>About this paper</h4>
-        <p style="max-width:480px;">This is a vendor-neutral thought paper on agentic AI applied to airline fuel economics, built as a conversation starter for airline client discussions and a build brief for an internal prototype. It does not represent any named airline's actual systems, contracts, or financials.</p>
+        <p style="max-width:480px;">This is a vendor-neutral thought paper on agentic AI applied to airline fuel economics, built as a conversation starter for airline client discussions and a build brief for an internal prototype. Most of it does not represent any named airline's actual systems, contracts, or financials. The one exception is a benchmark table built entirely from ten carriers' own published annual results.</p>
       </div>
       <div>
         <h4>Illustrative figures</h4>
@@ -917,6 +955,7 @@ footer li{margin-bottom:9px;}
           <li>$410K/day scenario (illustrative)</li>
           <li>1–2% network saving (directional, per public commentary on fuel-hedging/tankering programs)</li>
           <li>Crude oil price chart, indexed and illustrative at quarterly resolution from 2019 to 2025, shaped around real events (2020 demand collapse, 2022 invasion-driven spike) but not exact quarterly prices</li>
+          <li>The ten-carrier benchmark table is the exception to all of the above, built from real, publicly disclosed figures, with sources listed directly under that table</li>
         </ul>
       </div>
       <div>
@@ -928,7 +967,7 @@ footer li{margin-bottom:9px;}
         </ul>
       </div>
     </div>
-    <div class="disclaimer">All figures on this page are illustrative examples used to explain the mechanics of fuel decisioning and the potential value of coordination, and they are not sourced from any specific airline's disclosed financials, so they should not be quoted as real savings estimates in a client-facing commitment. Validate against the target airline's actual fuel spend, network size, and existing hedging program before using numbers externally.</div>
+    <div class="disclaimer">All figures on this page are illustrative examples used to explain the mechanics of fuel decisioning and the potential value of coordination, and they are not sourced from any specific airline's disclosed financials, so they should not be quoted as real savings estimates in a client-facing commitment. The ten-carrier benchmark table is the one exception, built from each carrier's own published annual results, and it should be re-verified against the latest filings before external use since fiscal periods and reported figures change every year. Validate against the target airline's actual fuel spend, network size, and existing hedging program before using numbers externally.</div>
     <div class="byline">Written by Srinivas Kattamuri</div>
   </div>
 </footer>
@@ -946,6 +985,7 @@ const sections = [
   {id:'s-arch', label:'06 Agent architecture'},
   {id:'s-loop', label:'07 Continuous loop'},
   {id:'s-sim', label:'08 Simulator'},
+  {id:'s-bench', label:'Real benchmarks'},
   {id:'s-mvp', label:'09 MVP roadmap'},
   {id:'s-spec', label:'Appendix'},
   {id:'s-close', label:'Close'},

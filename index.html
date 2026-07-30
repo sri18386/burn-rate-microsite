@@ -210,6 +210,20 @@ b, strong{color:var(--ink); font-weight:600;}
 .rleg-item.margin-item b{color:var(--green);}
 @media (max-width:700px){ .rseg .rl{display:none;} .revbar{height:56px;} }
 
+/* ---------- volatility chart ---------- */
+.vol-block{margin-top:60px; padding-top:44px; border-top:1px solid var(--line-soft);}
+.vol-block h3{font-size:22px; margin-bottom:14px;}
+.vol-chart-wrap{margin-top:28px; border:1px solid var(--line); border-radius:14px; padding:20px 24px 14px; background:var(--bg-panel);}
+.vol-tag{
+  position:absolute; font-family:var(--mono); font-size:11px; text-align:center; white-space:nowrap;
+  padding:4px 9px; border-radius:6px; border:1px solid var(--line); background:var(--bg-panel-2);
+}
+.vol-tag b{display:block; font-size:13px;}
+.vol-tag.crash{color:var(--red); border-color:rgba(255,90,90,0.4);}
+.vol-tag.spike{color:var(--amber); border-color:rgba(255,176,32,0.4);}
+.vol-foot{display:flex; justify-content:space-between; margin-top:10px; font-family:var(--mono); font-size:11px; color:var(--ink-faint);}
+.vol-note{margin-top:20px; font-size:13.5px;}
+
 /* ---------- silo diagram ---------- */
 .silo-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:40px;}
 .silo-node{
@@ -421,6 +435,52 @@ footer li{margin-bottom:9px;}
         <div class="rleg-item margin-item"><span class="rleg-swatch" style="background:var(--green);"></span>Operating margin <b>$15</b></div>
       </div>
       <p style="margin-top:26px; font-size:13.5px;">Fuel ($25) alone outweighs the entire operating margin ($15), so a cost swing that would be a rounding error in most industries can wipe out or double what's left at the bottom of this bar.</p>
+    </div>
+
+    <div class="vol-block">
+      <h3>This $25 does not sit still.</h3>
+      <p style="max-width:700px; font-size:15px; color:var(--ink-dim);">Crude oil prices can move 50% or more within a single year, and jet fuel moves with them. The chart below uses indexed and illustrative crude oil prices to show a few of the swings the industry has lived through in the past five years.</p>
+      <div class="vol-chart-wrap">
+        <svg viewBox="0 0 920 300" width="100%" height="auto" style="display:block;">
+          <defs>
+            <linearGradient id="volFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffb020" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#ffb020" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="40" y1="260" x2="900" y2="260" stroke="#232c47" stroke-width="1"/>
+          <text x="40.0" y="282" font-family="JetBrains Mono" font-size="11" fill="#6b7494">2019</text>
+          <text x="196.4" y="282" font-family="JetBrains Mono" font-size="11" fill="#6b7494">2020</text>
+          <text x="352.7" y="282" font-family="JetBrains Mono" font-size="11" fill="#6b7494">2021</text>
+          <text x="497" y="282" font-family="JetBrains Mono" font-size="11" fill="#6b7494">2022</text>
+          <text x="653" y="282" font-family="JetBrains Mono" font-size="11" fill="#6b7494">2023</text>
+          <text x="809" y="282" font-family="JetBrains Mono" font-size="11" fill="#6b7494">2024</text>
+          <path d="M 40.0 197.1 L 118.2 193.7 L 196.4 191.4 L 243.3 237.1 L 290.2 214.3 L 352.7 197.1 L 430.9 180.0 L 509.1 174.3 L 532.5 111.4 L 587.3 140.0 L 665.5 168.6 L 743.6 166.3 L 821.8 170.9 L 900.0 165.1 L 900.0 260 L 40.0 260 Z" fill="url(#volFill)"/>
+          <path d="M 40.0 197.1 L 118.2 193.7 L 196.4 191.4 L 243.3 237.1 L 290.2 214.3 L 352.7 197.1 L 430.9 180.0 L 509.1 174.3 L 532.5 111.4 L 587.3 140.0 L 665.5 168.6 L 743.6 166.3 L 821.8 170.9 L 900.0 165.1" fill="none" stroke="#ffb020" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="40.0" cy="197.1" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="118.2" cy="193.7" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="196.4" cy="191.4" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="290.2" cy="214.3" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="352.7" cy="197.1" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="430.9" cy="180.0" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="509.1" cy="174.3" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="587.3" cy="140.0" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="665.5" cy="168.6" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="743.6" cy="166.3" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="821.8" cy="170.9" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="900.0" cy="165.1" r="2.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="1.2" opacity="0.55"/>
+          <line x1="243.3" y1="180" x2="243.3" y2="231" stroke="#ff5a5a" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+          <circle cx="243.3" cy="237.1" r="4.5" fill="#0a0e1a" stroke="#ff5a5a" stroke-width="2"/>
+          <text x="243.3" y="158" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#ff5a5a">−65%</text>
+          <text x="243.3" y="175" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#a9b2cf">COVID demand collapse</text>
+          <line x1="532.5" y1="78" x2="532.5" y2="106" stroke="#ffb020" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+          <circle cx="532.5" cy="111.4" r="4.5" fill="#0a0e1a" stroke="#ffb020" stroke-width="2"/>
+          <text x="532.5" y="45" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#ffb020">+75%</text>
+          <text x="532.5" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#a9b2cf">Russia invades Ukraine</text>
+        </svg>
+        <div class="vol-foot"><span>Illustrative, indexed to Brent crude</span><span>2019 to 2024</span></div>
+      </div>
+      <p class="vol-note">A department that revisits its fuel numbers once a quarter cannot react to swings like these while they are still happening.</p>
     </div>
   </div>
 </section>
@@ -808,6 +868,7 @@ footer li{margin-bottom:9px;}
           <li>$150/ton tankering gap (illustrative)</li>
           <li>$410K/day scenario (illustrative)</li>
           <li>1–2% network saving (directional, per public commentary on fuel-hedging/tankering programs)</li>
+          <li>Crude oil price chart, indexed and illustrative, shaped around real events (2020 demand collapse, 2022 invasion-driven spike) but not exact daily prices</li>
         </ul>
       </div>
       <div>
